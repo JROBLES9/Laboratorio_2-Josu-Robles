@@ -61,19 +61,19 @@
             // inicioToolStripMenuItem
             // 
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.inicioToolStripMenuItem.Text = "Inicio";
             // 
             // haciaToolStripMenuItem
             // 
             this.haciaToolStripMenuItem.Name = "haciaToolStripMenuItem";
-            this.haciaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.haciaToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.haciaToolStripMenuItem.Text = "Hacia atrás";
             // 
             // haciaAdelanteToolStripMenuItem
             // 
             this.haciaAdelanteToolStripMenuItem.Name = "haciaAdelanteToolStripMenuItem";
-            this.haciaAdelanteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.haciaAdelanteToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.haciaAdelanteToolStripMenuItem.Text = "Hacia delante";
             // 
             // BtIr
@@ -84,6 +84,7 @@
             this.BtIr.TabIndex = 1;
             this.BtIr.Text = "Ir";
             this.BtIr.UseVisualStyleBackColor = true;
+            this.BtIr.Click += new System.EventHandler(this.BtIr_Click);
             // 
             // comboBox1
             // 

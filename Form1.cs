@@ -16,5 +16,10 @@ namespace Laboratorio_2_Josué_Robles
         {
             InitializeComponent();
         }
+
+        private void BtIr_Click(object sender, EventArgs e)
+        {
+            f
+        }
     }
 }
