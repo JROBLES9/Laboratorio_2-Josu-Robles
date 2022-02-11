@@ -19,7 +19,28 @@ namespace Laboratorio_2_Josué_Robles
 
         private void BtIr_Click(object sender, EventArgs e)
         {
-            f
+            webBrowser1.Navigate(new Uri(comboBox1.SelectedItem.ToString()));
+        }
+
+        private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            webBrowser1.GoHome();
+        }
+
+        private void haciaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            webBrowser1.GoBack();
+        }
+
+        private void haciaAdelanteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            webBrowser1.GoForward();
+        }
+
+        private void ROGA_Load(object sender, EventArgs e)
+        {
+            comboBox1.SelectedIndex = 0;
+            webBrowser1.GoHome();
         }
     }
 }
