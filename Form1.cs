@@ -19,9 +19,22 @@ namespace Laboratorio_2_Josué_Robles
 
         private void BtIr_Click(object sender, EventArgs e)
         {
-            webBrowser1.Navigate(new Uri(comboBox1.SelectedItem.ToString()));
+            if (comboBox1.Text == null)//Si seleccióno una de las paginas favoritas
+            {
+                if (comboBox1.SelectedItem != null)
+                    webBrowser1.Navigate(new Uri(comboBox1.SelectedItem.ToString()));
+            }
+            else//Si escribio una dirección
+            {
+                if (!comboBox1.Text.Contains("."))
+                    webBrowser1.Navigate(new Uri("https://www.google.com/search?q=" + comboBox1.Text.ToString()));
+                else if (!comboBox1.Text.Contains("https://"))
+                    webBrowser1.Navigate(new Uri("https://" + comboBox1.Text.ToString()));
+                else
+                    webBrowser1.Navigate(new Uri(comboBox1.Text.ToString()));
+            }
         }
-
+       
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             webBrowser1.GoHome();
