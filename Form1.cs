@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Laboratorio_2_Josué_Robles
 {
@@ -16,25 +17,39 @@ namespace Laboratorio_2_Josué_Robles
         {
             InitializeComponent();
         }
-
         private void BtIr_Click(object sender, EventArgs e)
         {
+            String url = null;
             if (comboBox1.Text == null)//Si seleccióno una de las paginas favoritas
             {
                 if (comboBox1.SelectedItem != null)
-                    webBrowser1.Navigate(new Uri(comboBox1.SelectedItem.ToString()));
+                {
+                    url = comboBox1.SelectedItem.ToString();
+                    webBrowser1.Navigate(new Uri(url));
+                }
             }
             else//Si escribio una dirección
             {
                 if (!comboBox1.Text.Contains("."))
-                    webBrowser1.Navigate(new Uri("https://www.google.com/search?q=" + comboBox1.Text.ToString()));
+                {
+                    url = "https://www.google.com/search?q=" + comboBox1.Text.ToString();
+                    webBrowser1.Navigate(new Uri(url));
+                }
                 else if (!comboBox1.Text.Contains("https://"))
-                    webBrowser1.Navigate(new Uri("https://" + comboBox1.Text.ToString()));
+                {
+                    url = "https://" + comboBox1.Text.ToString();
+                    webBrowser1.Navigate(new Uri(url));
+                }
                 else
-                    webBrowser1.Navigate(new Uri(comboBox1.Text.ToString()));
+                {
+                    url = comboBox1.Text.ToString();
+                    webBrowser1.Navigate(new Uri(url));
+                }
             }
+            Guardar("archivo.txt", url);
         }
-       
+        //Hacer que en el comboBox se guarden las direcciones recientes
+        //Que con precionar enter busque
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             webBrowser1.GoHome();
@@ -54,6 +69,24 @@ namespace Laboratorio_2_Josué_Robles
         {
             comboBox1.SelectedIndex = 0;
             webBrowser1.GoHome();
+            string fileName = @"C:\Users\Usuario\source\repos\Laboratorio_2 Josué Robles\bin\Debug\archivo.txt";
+            FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+            StreamReader reader = new StreamReader(stream);
+
+            while (reader.Peek() > -1)
+            {
+                String texto = reader.ReadLine();
+                comboBox1.Items.Add(texto);
+            }
+            reader.Close();
+        }
+
+        private void Guardar(string nombreArchvio, string texto)
+        {
+            FileStream stream = new FileStream(nombreArchvio, FileMode.Append, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(stream);
+            writer.Write(texto + "\n");
+            writer.Close();
         }
     }
 }

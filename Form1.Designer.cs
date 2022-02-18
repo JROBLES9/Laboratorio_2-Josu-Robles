@@ -62,21 +62,21 @@
             // inicioToolStripMenuItem
             // 
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.inicioToolStripMenuItem.Text = "Inicio";
             this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
             // 
             // haciaToolStripMenuItem
             // 
             this.haciaToolStripMenuItem.Name = "haciaToolStripMenuItem";
-            this.haciaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.haciaToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.haciaToolStripMenuItem.Text = "Hacia atrás";
             this.haciaToolStripMenuItem.Click += new System.EventHandler(this.haciaToolStripMenuItem_Click);
             // 
             // haciaAdelanteToolStripMenuItem
             // 
             this.haciaAdelanteToolStripMenuItem.Name = "haciaAdelanteToolStripMenuItem";
-            this.haciaAdelanteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.haciaAdelanteToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.haciaAdelanteToolStripMenuItem.Text = "Hacia delante";
             this.haciaAdelanteToolStripMenuItem.Click += new System.EventHandler(this.haciaAdelanteToolStripMenuItem_Click);
             // 
@@ -104,17 +104,17 @@
             // 
             // webBrowser1
             // 
-            this.webBrowser1.Location = new System.Drawing.Point(22, 64);
+            this.webBrowser1.Location = new System.Drawing.Point(22, 66);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(880, 422);
+            this.webBrowser1.Size = new System.Drawing.Size(880, 420);
             this.webBrowser1.TabIndex = 3;
             // 
             // ROGA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 498);
+            this.ClientSize = new System.Drawing.Size(914, 556);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.BtIr);
