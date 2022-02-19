@@ -46,10 +46,16 @@ namespace Laboratorio_2_Josué_Robles
                     webBrowser1.Navigate(new Uri(url));
                 }
             }
-            Guardar("archivo.txt", url);
+
+            bool verificador = true;
+
+            for(int i = 0; i < comboBox1.Items.Count; i++)
+                if (url == comboBox1.Items[i].ToString())
+                    verificador = false;
+
+            if (verificador)
+                Guardar("archivo.txt", url);
         }
-        //Hacer que en el comboBox se guarden las direcciones recientes
-        //Que con precionar enter busque
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             webBrowser1.GoHome();
